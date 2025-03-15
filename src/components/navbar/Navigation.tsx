@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { splineSansMono } from '@/app/fonts'
-import { mileins } from '@/app/fonts'
 
 type NavButtonProps = {
     label: string;
