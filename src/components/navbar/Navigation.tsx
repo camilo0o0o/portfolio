@@ -1,30 +1,43 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { splineSansMono } from '@/app/fonts'
+import { mileins } from '@/app/fonts'
 
 type NavButtonProps = {
     label: string;
     isActive: boolean;
     onClick: () => void;
     activeColorVar?: string;
+    hoverColorVar?: string;
 }
 
 const navButtons = [
-    { label: 'UX/UI DESIGN', colorVar: 'var(--color-primary)' },
-    { label: '3D & MOTION', colorVar: 'var(--color-secondary)' },
-    { label: 'CODING', colorVar: 'var(--color-tertiary)' },
-    { label: 'ANALOG EXPLORATIONS', colorVar: 'var(--color-quaternary)' }
+    { label: 'UX/UI DESIGN', colorVar: 'var(--color-primary)', hoverColorVar: 'var(--color-primary-hover)' },
+    { label: '3D & MOTION', colorVar: 'var(--color-secondary)', hoverColorVar: 'var(--color-secondary-hover)' },
+    { label: 'CODING', colorVar: 'var(--color-tertiary)', hoverColorVar: 'var(--color-tertiary-hover)' },
+    { label: 'ANALOG EXPLORATIONS', colorVar: 'var(--color-quaternary)', hoverColorVar: 'var(--color-quaternary-hover)' }
 ] as const
 
-function NavButton({ label, isActive, onClick, activeColorVar = 'var(--color-text-default)' }: NavButtonProps) {
+function NavButton({ label, isActive, onClick, activeColorVar = 'var(--color-default-grey)', hoverColorVar = 'var(--color-grey-hover)' }: NavButtonProps) {
     return (
         <button
             onClick={onClick}
+            className={`text-xs transition-all cursor-pointer nav-button ${splineSansMono.className}`}
             style={{ 
-                color: isActive ? activeColorVar : 'var(--color-text-default)',
-                fontWeight: isActive ? 'bold' : '100'
+                color: isActive ? activeColorVar : 'var(--color-default-grey)',
+                fontWeight: isActive ? 'bold' : '100',
+                '--hover-color': isActive ? activeColorVar : hoverColorVar
+            } as React.CSSProperties}
+            onMouseEnter={(e) => {
+                if (!isActive) {
+                    e.currentTarget.style.color = hoverColorVar;
+                }
             }}
-            className={`${splineSansMono.className} text-xs transition-colors cursor-pointer`}
+            onMouseLeave={(e) => {
+                if (!isActive) {
+                    e.currentTarget.style.color = 'var(--color-default-grey)';
+                }
+            }}
         >
             {label}
         </button>
@@ -61,6 +74,7 @@ export default function Navigation({ onCategoryChange }: NavigationProps) {
                     isActive={activeButtons.includes(button.label)}
                     onClick={() => toggleButton(button.label)}
                     activeColorVar={button.colorVar}
+                    hoverColorVar={button.hoverColorVar}
                 />
             </li>
         ))
