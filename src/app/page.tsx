@@ -1,19 +1,14 @@
 import Navbar from '@/components/Navbar/index'
 import Footer from '@/components/Footer/Footer'
 import Card from '@/components/projectsCards/Card'
+import PhysicsGrid from '@/components/projectsCards/PhysicsGrid';
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-col items-center justify-center h-screen">
-        <Card 
-          imageSrc="/images/projects/about_me_img.jpg"
-          imageAlt="about me"
-          topRightText="1995"
-          bottomLeftText="ME, MYSELF AND I"  
-          hoverColor="primary"
-        />
+      <div className="w-full h-screen">
+        <PhysicsGrid backgroundColor="#f7f7f7" objectColor="#C25421"/>
       </div>
       <Footer />
     </main>
