@@ -3,8 +3,6 @@
 import React, { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
 
-interface PhysicsGridProps {}
-
 interface Project {
   id: string;
   title: string;
@@ -65,7 +63,7 @@ const projects: Project[] = [
   }
 ];
 
-const PhysicsGrid: React.FC<PhysicsGridProps> = () => {
+const PhysicsGrid = () => {
   // Create refs for the canvas container and engine
   const sceneRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<Matter.Engine | null>(null);
