@@ -3,10 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
 
-interface PhysicsGridProps {
-  backgroundColor?: string;
-  objectColor?: string;
-}
+interface PhysicsGridProps {}
 
 interface Project {
   id: string;
@@ -68,10 +65,7 @@ const projects: Project[] = [
   }
 ];
 
-const PhysicsGrid: React.FC<PhysicsGridProps> = ({
-  backgroundColor = '#C25421',
-  objectColor = '#f7f7f7',
-}) => {
+const PhysicsGrid: React.FC<PhysicsGridProps> = () => {
   // Create refs for the canvas container and engine
   const sceneRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<Matter.Engine | null>(null);
@@ -112,7 +106,7 @@ const PhysicsGrid: React.FC<PhysicsGridProps> = ({
         width: screenWidth,
         height: screenHeight,
         pixelRatio: 2,
-        background: backgroundColor,
+        background: 'transparent',
         wireframes: false,
       }
     });
@@ -125,7 +119,7 @@ const PhysicsGrid: React.FC<PhysicsGridProps> = ({
       screenWidth + 320, 
       160, 
       { 
-        render: { fillStyle: objectColor }, 
+        render: { fillStyle: '#f7f7f7' }, 
         isStatic: true 
       }
     );
@@ -136,7 +130,7 @@ const PhysicsGrid: React.FC<PhysicsGridProps> = ({
       160, 
       screenHeight, 
       { 
-        render: { fillStyle: objectColor },
+        render: { fillStyle: '#f7f7f7' },
         isStatic: true 
       }
     );
@@ -147,7 +141,7 @@ const PhysicsGrid: React.FC<PhysicsGridProps> = ({
       160, 
       screenHeight, 
       { 
-        render: { fillStyle: objectColor },
+        render: { fillStyle: '#f7f7f7' },
         isStatic: true 
       }
     );
@@ -158,14 +152,10 @@ const PhysicsGrid: React.FC<PhysicsGridProps> = ({
       screenWidth + 320, 
       160, 
       { 
-        render: { fillStyle: objectColor },
+        render: { fillStyle: '#f7f7f7' },
         isStatic: true 
       }
     );
-    
-    // Style variables
-    const border = 5;
-    const fillColor = objectColor;
     
     // Create interactive objects
     const projectBodies = projects.map((project, index) => {
@@ -184,7 +174,7 @@ const PhysicsGrid: React.FC<PhysicsGridProps> = ({
         physicsHeight,
         { 
           render: { 
-            fillStyle: fillColor,
+            fillStyle: '#f7f7f7',
             lineWidth: 2,
             strokeStyle: 'black',
             sprite: {
@@ -244,7 +234,7 @@ const PhysicsGrid: React.FC<PhysicsGridProps> = ({
     document.addEventListener('mousemove', handleMouseMove);
     
     // Create click handler for objects
-    Events.on(mouseConstraint, 'mouseup', function(event) {
+    Events.on(mouseConstraint, 'mouseup', function() {
       if (!mouseConstraint.body) {
         const bodies = engine.world.bodies;
         
