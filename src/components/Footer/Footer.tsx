@@ -19,7 +19,7 @@ function FooterContent({ label, url }: FooterContentProps) {
 
 export default function Footer() {
     return (
-        <footer className="fixed bottom-0 left-0 right-0 py-6 bg-[var(--background)]">
+        <footer className="fixed bottom-0 left-0 right-0 py-6">
             <div className="flex flex-row items-center justify-center gap-4">
                 {/* <FooterContent label="CAMILOGIRALDO31@GMAIL.COM" url="/" /> */}
                 <FooterContent label="CAMILO.WIP" url="https://www.instagram.com/camilo.wip/" />
