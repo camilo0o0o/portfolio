@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { mileins } from '../../app/fonts';
 
 export default function TimeLocation() {
   const [time, setTime] = useState<string>('');
@@ -24,16 +25,19 @@ export default function TimeLocation() {
   }, []);
 
   return (
-    <div className="fixed top-6 right-6 z-50">
+    <div className="fixed top-27 right-5 z-50">
       <div 
-        className="text-sm font-mono text-gray-700 space-y-4"
-        style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+        className={`text-3xl text-cg-dark-grey font-bold flex items-center space-x-2 ${mileins.className}`}
+        style={{
+          transform: 'rotate(-90deg) translateX(50%)',
+          transformOrigin: 'right center'
+        }}
       >
         <div className="tracking-wider">
           {time}
         </div>
-        <div className="tracking-wider text-xs">
-          LONDON
+        <div className="tracking-wider text-2xl font-bold">
+          LONDON, UK
         </div>
       </div>
     </div>

@@ -19,11 +19,4 @@ export interface Project {
   details: ProjectDetails;
 }
 
-export interface SpotifyTrack {
-  id: string;
-  name: string;
-  artist: string;
-  album: string;
-  image: string;
-  spotifyUrl: string;
-} 
+ 

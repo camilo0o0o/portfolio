@@ -4,7 +4,6 @@ import { mileins } from "./fonts";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import TimeLocation from "@/components/layout/TimeLocation";
-import SpotifyDisplay from "@/components/layout/SpotifyDisplay";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +32,6 @@ export default function RootLayout({
       >
         <Header />
         <TimeLocation />
-        <SpotifyDisplay />
         {children}
       </body>
     </html>
