@@ -15,17 +15,13 @@ export default function ProjectGrid({ projects, activeCategory }: ProjectGridPro
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {projects.map((project) => {
-        const isVisible = activeCategory === 'All' || project.category === activeCategory;
-        
-        return (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            isVisible={isVisible}
-          />
-        );
-      })}
+      {filteredProjects.map((project) => (
+        <ProjectCard
+          key={project.id}
+          project={project}
+          isVisible={true}
+        />
+      ))}
     </div>
   );
 } 

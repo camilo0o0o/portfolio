@@ -1,6 +1,6 @@
 'use client';
 
-import { Category } from '@/types';
+
 
 interface CategoryFilterProps {
   categories: string[];
@@ -8,13 +8,7 @@ interface CategoryFilterProps {
   onCategoryChange: (category: string) => void;
 }
 
-const categoryColors: Record<string, string> = {
-  'All': 'bg-gray-50',
-  'UX Design': 'bg-blue-50',
-  '3D & Motion': 'bg-purple-50',
-  'Coding': 'bg-green-50',
-  'Analog Explorations': 'bg-orange-50'
-};
+
 
 export default function CategoryFilter({ 
   categories, 

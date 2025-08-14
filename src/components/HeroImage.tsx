@@ -4,17 +4,12 @@ import { motion, useSpring, useMotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-interface HeroImageProps {
-  onFadeComplete: () => void;
-  onFadeStart: () => void;
-}
-
-export default function HeroImage({ onFadeComplete, onFadeStart }: HeroImageProps) {
+export default function HeroImage() {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const [hasMouseMoved, setHasMouseMoved] = useState(false);
-  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isFadingOut] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const springConfig = { damping: 10, stiffness: 100, restDelta: 0.005 };
@@ -55,7 +50,7 @@ export default function HeroImage({ onFadeComplete, onFadeStart }: HeroImageProp
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [hasMouseMoved]);
+  }, [hasMouseMoved, resetPosition, x, y]);
 
   return (
     <motion.div
