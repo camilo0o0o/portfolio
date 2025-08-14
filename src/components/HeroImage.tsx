@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useSpring, useMotionValue } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
 export default function HeroImage() {
@@ -16,11 +16,11 @@ export default function HeroImage() {
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
 
-  const resetPosition = () => {
+  const resetPosition = useCallback(() => {
     x.set(0);
     y.set(0);
     setHasMouseMoved(false);
-  };
+  }, [x, y]);
 
   useEffect(() => {
     if (!ref.current) return;

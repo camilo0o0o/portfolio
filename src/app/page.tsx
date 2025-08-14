@@ -37,10 +37,7 @@ export default function Home() {
 
       {/* Centered Hero Image */}
       <div className="absolute inset-0 flex justify-center items-center z-10">
-        <HeroImage 
-          onFadeComplete={handleFadeComplete} 
-          onFadeStart={handleFadeStart}
-        />
+        <HeroImage />
       </div>
       
       {/* Text Overlay - Centered on screen, on top of image */}
