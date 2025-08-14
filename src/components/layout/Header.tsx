@@ -10,7 +10,7 @@ export default function Header() {
         <Image
           src="/mi_nombre.svg"
           alt="Portfolio Logo"
-          width={120}
+          width={180}
           height={40}
           className="hover:opacity-80 transition-opacity duration-300"
         />

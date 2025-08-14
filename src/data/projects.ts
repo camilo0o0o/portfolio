@@ -76,24 +76,6 @@ export const projects: Project[] = [
       year: '2023',
       tools: ['Ink', 'Charcoal', 'Paper', 'Scanner']
     }
-  },
-  {
-    id: '5',
-    slug: 'data-visualization',
-    title: 'Climate Data Viz',
-    subtitle: 'Interactive Dashboard',
-    category: 'Coding',
-    thumbnailImage: '/images/projects/climate-thumb.jpg',
-    images: [
-      '/images/projects/climate-1.jpg',
-      '/images/projects/climate-2.jpg'
-    ],
-    description: 'An interactive data visualization dashboard showing climate change trends using D3.js and real-time environmental data.',
-    details: {
-      year: '2024',
-      tools: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-      link: 'https://climate-viz-demo.vercel.app'
-    }
   }
 ];
 
