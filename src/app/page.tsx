@@ -1,26 +1,41 @@
-import Image from 'next/image'
+import Logo from '@/components/Logo/Logo'
+import HalftoneImage from '@/components/HalftoneImage/HalftoneImage'
+import LayoutContainer from '@/components/LayoutContainer/LayoutContainer'
+import Timezone from '@/components/Timezone/Timezone'
+import ChatButton from '@/components/ChatButton/ChatButton'
 
 export default function Home() {
+  const mainImage = {
+    src: "/images/projects/selfie.jpeg",
+    alt: "Selfie"
+  }
+
   return (
-    <main className="min-h-screen flex items-center justify-center relative">
-      <div className="absolute top-8 left-8">
-        <Image 
-          src="/mi_nombre.svg" 
-          alt="Camilo Giraldo" 
-          width={200}
-          height={28}
-          className="max-h-[28px] w-auto"
-          priority
+    <main className="min-h-screen">
+      <LayoutContainer>
+        {/* Main halftone image in the center */}
+        <HalftoneImage
+          src={mainImage.src}
+          alt={mainImage.alt}
+          width={250}
         />
+      </LayoutContainer>
+
+      {/* Border elements positioned absolutely */}
+      {/* Logo in top border */}
+      <div className="fixed top-4 left-10 z-[100]">
+        <Logo />
       </div>
-      <Image 
-        src="/images/projects/selfie.jpeg" 
-        alt="Selfie" 
-        width={800}
-        height={600}
-        className="max-w-[250px] max-h-full object-contain border-2 border-dark-grey"
-        priority
-      />
+
+      {/* Timezone in right border */}
+      <div className="fixed top-1/2 right-[-48px] z-[100] -rotate-90 origin-center">
+        <Timezone />
+      </div>
+
+      {/* Chat button in bottom border */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[100]">
+        <ChatButton />
+      </div>
     </main>
   );
 }

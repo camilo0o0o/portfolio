@@ -59,3 +59,22 @@ body {
   font-weight: bold;
   letter-spacing: -0.025em;
 }
+
+/* Halftone canvas styling */
+.halftone-canvas {
+  border: 2px solid #333333;
+}
+
+/* Layout container styling */
+.layout-border-element {
+  pointer-events: auto;
+}
+
+/* Ensure border elements don't interfere with main content */
+.layout-container {
+  pointer-events: none;
+}
+
+.layout-container > * {
+  pointer-events: auto;
+}
