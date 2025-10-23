@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { splineSansMono } from '@/app/fonts'
+import { mileins } from '@/app/fonts'
 
 // Create formatter once, outside the component
 const timeFormatter = new Intl.DateTimeFormat('en-GB', {
@@ -29,8 +29,16 @@ export default function Timezone() {
     }, [])
 
     return (
-        <div className={`${splineSansMono.className} text-right w-36 font-normal text-[#959595] text-xs`}>
-            <span>{time} LONDON, UK</span>
+        <div 
+            className={`text-3xl font-bold flex items-center space-x-2 ${mileins.className}`}
+            style={{ color: 'var(--color-dark-grey)' }}
+        >
+            <div className="tracking-wider">
+                {time}
+            </div>
+            <div className="tracking-wider text-2xl font-bold">
+                LONDON, UK
+            </div>
         </div>
     )
 }

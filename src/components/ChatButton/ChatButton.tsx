@@ -1,6 +1,6 @@
 'use client'
 
-import { splineSansMono } from '@/app/fonts'
+import { mileins } from '@/app/fonts'
 
 interface ChatButtonProps {
   className?: string
@@ -20,7 +20,7 @@ export default function ChatButton({ className = '', onClick }: ChatButtonProps)
   return (
     <button
       onClick={handleClick}
-      className={`${splineSansMono.className} text-xs font-light text-default-grey hover:opacity-80 transition-opacity cursor-pointer ${className}`}
+      className={`${mileins.className} text-lg font-bold text-dark-grey hover:opacity-80 transition-opacity cursor-pointer`}
     >
       LET'S CHAT
     </button>

@@ -20,7 +20,7 @@ export default function LayoutContainer({
       {/* Main content area with 40px padding from all sides */}
       <div className="absolute inset-0 p-10">
         {/* Content container */}
-        <div className="w-full h-full bg-background-grey relative">
+        <div className="w-full h-full bg-white relative">
           {/* Top-left paragraph area */}
           <div className="absolute top-6 left-6 z-10">
             {/* This will be where paragraph text can be added */}

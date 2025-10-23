@@ -28,12 +28,12 @@ export default function Home() {
       </div>
 
       {/* Timezone in right border */}
-      <div className="fixed top-1/2 right-[-48px] z-[100] -rotate-90 origin-center">
+      <div className="fixed top-[85%] right-[-64px] z-[100] -rotate-90 origin-center">
         <Timezone />
       </div>
 
       {/* Chat button in bottom border */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[100]">
+      <div className="fixed bottom-4 left-[3%] z-[100]">
         <ChatButton />
       </div>
     </main>
