@@ -15,6 +15,7 @@
   --color-hover-grey: #d1d5db;
   --color-background-grey: #f7f7f7;
   --color-dark-grey: #333333;
+  --color-beige: #ECE7DA;
   
   /* Fonts */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -44,7 +45,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--color-background-grey);
+  background: var(--color-beige);
   font-family: var(--font-sans);
 }
 
@@ -58,4 +59,9 @@ body {
   font-family: var(--font-custom);
   font-weight: bold;
   letter-spacing: -0.025em;
+}
+
+/* Halftone canvas styling */
+.halftone-canvas {
+  border: 2px solid #333333;
 }
