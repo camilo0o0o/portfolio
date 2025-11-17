@@ -23,11 +23,11 @@ interface HalftoneImageProps {
 }
 
 const defaultConfig: HalftoneConfig = {
-  step: 6,
+  step: 4,
   padding: 10,
   gridOpacity: 0.2,
   backgroundColor: '#333333',
-  circleColor: '#f7f7f7'
+  circleColor: '#ECE7DA'
 }
 
 export default function HalftoneImage({ 
@@ -55,7 +55,6 @@ export default function HalftoneImage({
   const { 
     canvasRef, 
     drawHalftone, 
-    drawOriginal,
     animateToOriginal,
     animateToHalftone
   } = useCanvasRenderer({ 
@@ -85,7 +84,7 @@ export default function HalftoneImage({
     if (image && image.complete && image.naturalWidth > 0) {
       handleImageLoad()
     }
-  }, [handleImageLoad])
+  }, [handleImageLoad, imageRef])
 
   // Draw halftone effect when image data becomes available and trigger fade-in
   useEffect(() => {

@@ -1,13 +1,12 @@
 'use client'
 
-import { mileins } from '@/app/fonts'
+import { splineSansMono } from '@/app/fonts'
 
 interface ChatButtonProps {
-  className?: string
   onClick?: () => void
 }
 
-export default function ChatButton({ className = '', onClick }: ChatButtonProps) {
+export default function ChatButton({ onClick }: ChatButtonProps) {
   const handleClick = () => {
     if (onClick) {
       onClick()
@@ -20,9 +19,9 @@ export default function ChatButton({ className = '', onClick }: ChatButtonProps)
   return (
     <button
       onClick={handleClick}
-      className={`${mileins.className} text-lg font-bold text-dark-grey hover:opacity-80 transition-opacity cursor-pointer`}
+      className={`${splineSansMono.className} text-sm font-light text-dark-grey hover:opacity-80 transition-opacity cursor-pointer underline`}
     >
-      LET'S CHAT
+      Let&apos;s chat
     </button>
   )
 }
